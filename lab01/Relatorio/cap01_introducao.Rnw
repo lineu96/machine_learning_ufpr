@@ -1,0 +1,15 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 1INTRODUÇÃO
+% ----------------------------------------------------------------------
+
+Aprendizado de máquina
+
+Classificadores
+
+KNN
+
+Reconhecimento de dígitos manuscritos
+
+Extração de características de imagens
+
+Objetivo da atividade
