@@ -72,7 +72,7 @@ names(c)
 
 # Quantis
 
-quantis <- data.frame(digit = 1:9,
+quantis <- data.frame(digit = 0:9,
                       `0%` = 1,
                       `25%` = 1,
                       `50%` = 1,
@@ -88,6 +88,9 @@ quantis[6,2:6] <- as.vector(quantile(f1_score$`5`))
 quantis[7,2:6] <- as.vector(quantile(f1_score$`6`))
 quantis[8,2:6] <- as.vector(quantile(f1_score$`7`))
 quantis[9,2:6] <- as.vector(quantile(f1_score$`8`))
+quantis[10,2:6] <- as.vector(quantile(f1_score$`9`))
+
+t(quantis[,c(1,5)])
 
 #---------------------------------------------------------------------
 
@@ -107,6 +110,14 @@ selecao <- subset(f1_score,
                     f1_score$`9` >= quantile(f1_score$`9`)[4])
 
 nrow(selecao)
+
+names(selecao)
+
+table(selecao$algorithm)
+table(selecao$n_neighbors)
+table(selecao$metric)
+table(selecao$sizes)
+
 
 #---------------------------------------------------------------------
 

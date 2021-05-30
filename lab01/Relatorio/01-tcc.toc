@@ -5,12 +5,10 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{5}{chapter.1}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Descri\IeC {\c c}\IeC {\~a}o das atividades}}{7}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Descri\IeC {\c c}\IeC {\~a}o da atividade}}{7}{chapter.2}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Resultados obtidos}}{9}{chapter.3}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Discuss\IeC {\~a}o dos resultados }}{11}{chapter.4}
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Considera\IeC {\c c}\IeC {\~o}es finais}}{13}{chapter.5}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Considera\IeC {\c c}\IeC {\~o}es finais}}{13}{chapter.4}
 \vspace {\cftbeforechapterskip }
 \vspace {\cftbeforechapterskip }

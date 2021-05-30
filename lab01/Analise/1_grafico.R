@@ -5,21 +5,47 @@
 
 x11()
 
-ggplot(subset(data#, data$algorithm == 'auto'
-              ), 
+library(ggplot2)
+
+data_graph <- data
+
+data_graph$n_neighbors <- as.factor(data_graph$n_neighbors)
+levels(data_graph$n_neighbors) <- c('k=1', 'k=5', 'k=10', 'k=20', 'k=50')
+
+data_graph$sizes <- as.factor(data_graph$sizes)
+levels(data_graph$sizes) <- c('5x5', '10x10', '20x20', '30x30', '40x40')
+
+levels(data_graph$metric) <- c("Chebyshev", "Euclidean", "Manhattan")
+
+g1<-ggplot(subset(data_graph), 
        aes(x=factor(digit), 
            y=f1_score, 
-           col = algorithm,
-           #size = metric,
-           #shape = metric,
-           #alpha = ,
-))+ 
-  theme_bw() + #ylim(c(-1,2.5))+
-  theme(legend.position = 'bottom')+
+           col = algorithm))+ 
+  theme_bw()+
+  theme(legend.position = 'bottom',
+        legend.title = element_text(size=12, face="bold", ),
+        legend.text = element_text(size=12, face="bold"),
+        strip.text.x = element_text(size=12, face="bold"),
+        strip.text.y = element_text(size=12, face="bold"),
+        axis.text.x=element_text(size=11),
+        axis.text.y=element_text(size=11)
+        #strip.background = element_rect(colour="red", fill="#CCCCFF")
+        )+
   geom_point(position=position_dodge(width=0.9))+
-  xlab('') + 
-  ylab('Precision')+
+  xlab('Dígito') + 
+  ylab('F1 score')+
+  scale_colour_discrete("Algoritmo")+
+  scale_x_discrete(breaks = seq(0,9,2))+
+  scale_y_continuous(breaks = seq(0,1,0.3))+
   facet_grid(n_neighbors~metric+sizes, scales = 'free')
+  #facet_grid(metric+sizes~n_neighbors, scales = 'free')
+
+ggsave(filename='fig.png', 
+       plot=g1, device="png", 
+       path=getwd(),
+       dpi=500, 
+       height = 8, width = 16.5)
+
 
 #---------------------------------------------------------------------
 

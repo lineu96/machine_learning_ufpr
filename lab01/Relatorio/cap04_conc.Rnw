@@ -1,0 +1,15 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 5 - CONCLUSÃO
+% ----------------------------------------------------------------------
+
+Os resultados mostraram que os melhores modelos eram aqueles com número reduzido de vizinhos, com distância Manhattan ou Euclidean e vetor de características vindos de imagens 20x20. Deste modo, não foi observado um ganho substancial ao aumentar-se o número de vizinhos ou o tamanho do vetor de características. As distâncias Manhattan ou Euclidean apresentaram resultados bastante similares e igualmente satisfatórios sendo que, em geral, opta-se pela distância Euclidean. Algo esperado e confirmado pelo experimento foi um desempenho similar entre diferentes algoritmos mostando que, para esse caso, a escolha pode ser simplesmente o mais rápido.
+
+O experimento da forma que foi realizado apresenta algumas restrições: os resultados mostram que entre 1 e 5 vizinhos, a melhor performance é apresentada com apelas 1. Contudo em um experimento melhor delineado poderia ser investigado qual o melhor número de vizinhos testando uma quantidade maior de possibilidades, provavelmente seria um valor entre 1 e 5. 
+
+Como outra restrição pode-se citar o tamanho do vetor de características. Foram testados 5 tamanhos, todos quadrados, em que o melhor foi aquele de tamanho 20x20. Os resultados mostraram em algum momento não faz mais diferença o acrécimo de características ao vetor de entrada, sendo que, provavelmente um vetor entre 100 e 400 características é bastante razoável.
+
+Inicialmente havia interesse em testar também como se saía a distância de Mahalanobis, contudo esta apresentou problemas e foi abandonada no começo dos experimentos. 
+
+Quanto aos algoritmos, não foi constatada uma diferença grande de desempenho entre as possibilidades, levando a crer que a escolha do mais rápido não traria prejuízos. Uma melhora neste experimento pode ser computar o tempo de execução nos cenários a fim concluir qual o mais rápido.
+
+Por fim, vale ressaltar que esta análise foi meramente exploratória. Uma possibilidade seria, para cada cenário, gerar réplicas variando o conjunto de dados e analisar os resultados do experimento utilizando alguma metodologia estatística que permita estimar o efeito de cada fator sobre as métricas de qualidade de ajuste, tal como modelos de regressão.

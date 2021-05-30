@@ -43,7 +43,7 @@
 % ---
 % PACOTES
 % ---
-
+\usepackage{lscape}
 % ---
 % Pacotes fundamentais
 % ---
@@ -147,7 +147,7 @@
 \instituicao{Universidade Federal do Paraná}
 
 \preambulo{Relatório apresentado à disciplina
-    Aprendizado de Máquina do Programa de Pós Graduação em Informática da Universidade Federal do Paraná.}
+    Aprendizado de Máquina, ministrada pelo professor Luiz Eduardo Soares de Oliveira, no Programa de Pós Graduação em Informática da Universidade Federal do Paraná.}
 % ---
 
 % ---
@@ -350,24 +350,19 @@
 <<cap01, child = "cap01_introducao.Rnw">>=
 @
 
-\chapter{Descrição das atividades}
-\label{cap:conjuntos-de-dados}
+\chapter{Descrição da atividade}
+\label{cap:descricao}
 <<cap02, child = "cap02_desc.Rnw">>=
 @
 
 \chapter{Resultados obtidos}
-\label{cap:revisao-de-literatura}
+\label{cap:resultados}
 <<cap03, child = "cap03_result.Rnw">>=
 @
 
-\chapter{Discussão dos resultados }
-\label{cap:estudo-de-simulacao}
-<<cap04, child = "cap04_disc.Rnw">>=
-@
-
 \chapter{Considerações finais}
-\label{cap:resultados-e-discussao}
-<<cap05, child = "cap05_conc.Rnw">>=
+\label{cap:conclusao}
+<<cap04, child = "cap04_conc.Rnw">>=
 @
 
 % ---

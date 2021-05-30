@@ -2,4 +2,61 @@
 % CAPÍTULO 3 - RESULTADOS OBTIDOS
 % ----------------------------------------------------------------------
 
-Resultados obtidos
+A Figura 1 mostra os resultados dos experimentos para cada combinação possível entre tamanho da imagem (5x5, 10x10, 20x20, 30x30, 40x40), número de vizinhos (k=1, k=5, k=10, k=20, k=50), métrica de distância (Manhattan, Euclidean, Chebyshev) e algoritmo (auto, ball\_tree, kd\_tree, brute).
+
+Ao analisar as quatro primeiras colunas da matriz de gráficos podemos observar que os resultados mostram um desempenho consideravelmente inferior das especificações considerando distância de Chebyshev quando comparada às distâncias Manhattan e Euclidean.
+
+Analisando as linhas da matriz é possível avaliar o impacto do número de vizinhos em cada combinação. Nota-se, para as distâncias Euclidean e Manhattan, uma queda de desempenho conforme aumenta-se o número de vizinhos. 
+
+Em cada quadro são mostrados o desempenho para cada algoritmo, nota-se uma sobreposição dos pontos de diferentes cores, indicando que o desempenho entre algoritmos é similar.
+
+Quanto ao tamanho das imagens, é possível observar que para poucos vizinhos parece haver uma pequena melhora de desempenho conforme aumenta-se o número de elementos no vetor de características. Contudo, há indícios de que tamanhos superiores a 20x20 não incrementam substancialmente o desempenho dos modelos.
+
+De forma geral, os indícios apontam que um cenário com poucos vizinhos e tamanho de imagem a partir de 20 devem ser os melhores. Como não há diferença aparente entre algoritmos, deve-se optar pela mais rápida. O tempo de execução dos modelos não foi computado mas sabe-se a priori que os algoritmos que usam \emph{spation partition tree} são mais velozes. Quanto a distância, Manhattan e Euclidean mostram desempenho similares, enquanto que a distância Chebyshev é bastante inferior às demais.
+
+Com o objetivo de selecionar dentre as 300 possibilidades aquelas com o melhor desempenho, foram selecionados os modelos em que, para cada dígito, o F1-score estava acima do quantil 75\%. A Tabela 1 apresenta os valores do quantil utilizado pra seleção.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccccccccc}
+\hline
+Dígito       & 0    & 1    & 2    & 3    & 4    & 5    & 6    & 7    & 8    & 9    \\ \hline
+Quantil 75\% & 0.96 & 0.81 & 0.91 & 0.91 & 0.88 & 0.92 & 0.95 & 0.81 & 0.88 & 0.85 \\ \hline
+\end{tabular}
+\caption{Quantil 75\% do F1-score para cada dígito.}
+\label{tab:table1}
+\end{table}
+
+Das 300 combinações, 32 estavam dentro do critério. Uma análise mais cuidadosa destes modelos mostrou que apenas modelos considerando número de vizinhos entre 1 e 5 e distância Manhattan ou Euclidean atendiam ao critério utilizado. Além disso metade dos 32 modelos possuiam vetor de características provenientes de imagens 20x20.
+
+Destes 32 modelos foram selecionados aqueles com o menor tamanho de imagem e menor número de vizinhos para explorar a matriz de confusão e acurácia. Restaram 8 modelos com desempenho extremamente similar. Estes modelos foram especificados com 1 vizinho, distâncias Manhattan ou Euclidean e vetor de características vindos de imagens 20x20. Deste modo a tabela 2 mostra a matriz de confusão do modelo considerado o melhor: algoritmo kd\_tree, 1 vizinho, distância Euclidean e imagem 20x20. Este modelo apresentou acurácia de 0.92. Das 1000 imagens usadas para avaliação do modelo apenas 81 foram classificadas de forma equivocada, mais da metade dos erros entre os dígitos 1 e 7.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|cccccccccc}
+\cline{2-11}
+  & 0                                & 1                                & 2                                 & 3                                & 4                                & 5                                & 6                                & 7                                & 8                                & 9                                 \\ \hline
+0 & \multicolumn{1}{c|}{\textbf{94}} & 1                                &                                   &                                  &                                  & 2                                &                                  &                                  &                                  &                                   \\ \cline{2-3}
+1 & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{93}} &                                   &                                  &                                  & 1                                &                                  & 1                                &                                  &                                   \\ \cline{3-4}
+2 & 1                                & \multicolumn{1}{c|}{3}           & \multicolumn{1}{c|}{\textbf{101}} & 1                                &                                  &                                  &                                  & 4                                &                                  & 1                                 \\ \cline{4-5}
+3 &                                  &                                  & \multicolumn{1}{c|}{}             & \multicolumn{1}{c|}{\textbf{97}} &                                  & 1                                &                                  & 2                                & 3                                &                                   \\ \cline{5-6}
+4 &                                  & 8                                &                                   & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{83}} & 1                                & 1                                &                                  &                                  & 2                                 \\ \cline{6-7}
+5 & 1                                &                                  &                                   & 5                                & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{90}} & 1                                &                                  &                                  &                                   \\ \cline{7-8}
+6 & 2                                & 5                                &                                   &                                  & 1                                & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{98}} &                                  &                                  &                                   \\ \cline{8-9}
+7 &                                  & 3                                & 1                                 &                                  & 1                                &                                  & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{87}} &                                  & 5                                 \\ \cline{9-10}
+8 &                                  & 4                                &                                   & 1                                &                                  & 4                                &                                  & \multicolumn{1}{c|}{2}           & \multicolumn{1}{c|}{\textbf{75}} & 1                                 \\ \cline{10-11} 
+9 &                                  & 1                                &                                   &                                  & 2                                &                                  &                                  & 8                                & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{\textbf{101}} \\ \hline
+\end{tabular}
+\caption{Matriz de confusão do modelo final.}
+\label{tab:table2}
+\end{table}
+
+\begin{landscape}
+
+\begin{figure}[]
+\label{fig:fig1}
+\centering
+\includegraphics[width=1.6\textwidth]{/home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png}
+\caption{F1-score para cada combinação do experimento.}
+\end{figure}
+\end{landscape}
