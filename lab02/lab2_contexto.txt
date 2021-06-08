@@ -1,0 +1,44 @@
+
+----------------------------
+
+Laboratório 2 - contexto
+
+----------------------------
+
+Tema: impactos da base de aprendizagem para diferentes algoritmos
+
+----------------------------
+
+Algoritmos: knn, naive bayes, lda, logistic, perceptron
+
+----------------------------
+
+Tamanho das bases:
+ - Base de treino: 20k
+ - Base de teste: 58846
+ - 10 classes balanceadas
+ - 132 características
+
+----------------------------
+
+Objetivo: comparar o desempenho dos classificadores em função da disponibilidade da base de treinamento
+
+----------------------------
+
+Procedimento: 
+ - Para cada algoritmo treinar 20 modelos aumentando o tamanho da base de treino de mil em mil
+ - Avaliar cada um dos 20 modelos na base de teste (fixa)
+ - 20 resultados para cada modelo, 5 algoritmos, acurácia
+
+----------------------------
+
+Resultados:
+ - Análise gráfica, eixo x tamanho da base, eixo y medida de ajuste, cor algoritmo
+ - Avaliar quais classificadores necessitam de menos exemplos para aprender
+ - Avaliar qual o tamanho da base de treinamento é suficiente para cada classificador (Em qual ponto o tamanho da base de treinamento deixa de ser relevante)
+ - Avaliar qual classificador tem o melhor desempenho com poucos dados? Se eu tivesse apenas mil exemplos, qual eu deveria escolher?
+ - Avaliar qual é o melhor classificador considerando toda a base de aprendizagem?
+ - Avaliar qual o classificador mais rápido para fazer a classificação dos 58 mil exemplos (knn vai perder)
+ - Analisar a matriz de confusao: considerando os classificadores que usaram toda a base de treinamento, quais são complementares? Quais poderiam ser combinados para obter um resultado melhor?
+
+----------------------------

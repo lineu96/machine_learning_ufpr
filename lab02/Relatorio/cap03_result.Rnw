@@ -1,0 +1,15 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 3 - RESULTADOS OBTIDOS
+% ----------------------------------------------------------------------
+
+A Figura 1 mostra os resultados dos experimentos... 
+
+\begin{landscape}
+
+\begin{figure}[]
+\label{fig:fig1}
+\centering
+\includegraphics[width=1.6\textwidth]{/home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png}
+\caption{F1-score para cada combinação do experimento.}
+\end{figure}
+\end{landscape}

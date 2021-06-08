@@ -1,0 +1,11 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 5 - CONCLUSÃO
+% ----------------------------------------------------------------------
+
+Os resultados mostraram que ... 
+
+O experimento da forma que foi realizado apresenta algumas restrições...
+
+
+
+Por fim, vale ressaltar que esta análise foi meramente exploratória. Uma possibilidade seria, para cada cenário, gerar réplicas variando o conjunto de dados e analisar os resultados do experimento utilizando alguma metodologia estatística que permita estimar o efeito de cada fator sobre as métricas de qualidade de ajuste, tal como modelos de regressão.

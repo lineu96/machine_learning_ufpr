@@ -1,0 +1,18 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 2 - DESCRIÇÃO DAS ATIVIDADES
+% ----------------------------------------------------------------------
+
+A tarefa consiste em ... com o objetivo de...
+
+Para o trabalho foi disponibilizado... 
+
+Foi realizado um experimento no qual...
+
+
+
+Através de análise gráfica do ... buscou-se verificar ... 
+
+Após esta análise gráfica ... explorar a matriz de confusão e acurácia. 
+
+Estas análises foram realizadas no software R.
+

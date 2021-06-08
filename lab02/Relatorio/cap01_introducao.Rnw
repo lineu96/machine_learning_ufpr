@@ -1,0 +1,30 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 1INTRODUÇÃO
+% ----------------------------------------------------------------------
+
+Aprendizado de máquina consiste em dar ao computador habilidade de aprender. Em outras palavras, o aprendizado de máquina consiste em programar computadores de forma que eles aprendam a partir de dados. Segundo T. Michell "o aprendizado de máquina trata do projeto e desenvolvimento de algoritmos que imitam o comportamento de aprendizagem humano, com um foco principal em aprender automaticamente a reconhecer padrões complexos e tomar decisões". A disseminação das técnicas de aprendizado de máquina se dão hoje pela disponibilidade de dados, poder computacional e ferramentas disponíveis.
+
+No cenário em que temos dados rotulados e uma variável alvo definida por categorias, recomenda-se o uso de técnicas de aprendizado supervisionado para fins de classificação, os chamados classificadores. 
+
+
+\textbf{Falar minimamente sobre knn, naive bayes, lda, logistic, perceptron}
+
+\section{knn}
+
+A ideia geral o kNN consiste em, para uma unidade, encontrar os k mais próximos (similares) a ele na base rotulada de treinamento e atribuir a classe mais frequente.
+
+é necessário obter a distância de um ponto para os outros, logo, existe um alto custo computacional. 
+
+não requer treinamento, apenas teste, pois necessita apenas de distâncias. 
+
+Por outro lado, a fase de teste demanda tempo considerável.
+
+\section{knn}
+
+\section{nb}
+
+\section{lda}
+
+\section{logistic}
+
+\section{perceptron}

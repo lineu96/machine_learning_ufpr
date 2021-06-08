@@ -1,0 +1,22 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 2 - DESCRIÇÃO DAS ATIVIDADES
+% ----------------------------------------------------------------------
+
+A tarefa consiste em gerar diferentes vetores de características para imagens e aplicar diferentes algoritmos kNN, variando valores de k e métricas de distância a fim de verificar qual conjunto de características e combinação de parâmetros do classificador produz os piores e melhores resultados. Para o trabalho foi disponibilizado um conjunto de 2 mil imagens rotuladas, além de um script Python para extração da represenação: para cada posição da imagem, verifica-se o valor de intensidade do pixel e se esse valor for maior que 128, a característica é igual a 1, caso contrário 0. 
+
+Como as imagens tem tamanho variável e os classificadores precisam de um vetor de tamanho fixo, as imagens são normalizadas para gerar o conjunto de dados no formato conveniente para utilização de classificadores. Além disso foi disponibilizado outro script Python com um exemplo de tamanho de imagem e parametrização de um kNN utilizando a biblioteca \emph{scikit-learn} em que a base de dados foi dividida em 50\% para treinamento e 50\% para validação. Este script foi usado como base para realização do trabalho.
+
+Foi realizado um experimento no qual variou-se o tamanho das imagens (que define o tamanho do vetor de características), o número de vizinhos do kNN, as métricas de distância e os algoritmos. As possibilidades testadas para cada uma destas variáveis foram:
+
+\begin{itemize}
+  \itemsep 0.5ex
+  \item Tamanhos de imagem: 5x5, 10x10, 20x20, 30x30, 40x40.
+  \item Número de vizinhos (k): 1, 5, 10, 20, 50.
+  \item Métricas de distância: Manhattan, Euclidean, Chebyshev.
+  \item Algoritmos: auto, ball\_tree, kd\_tree, brute.
+\end{itemize}
+
+O número de combinações únicas possíveis combinando cada nível é igual a 300. Cada combinação diz respeito a um modelo ajustado. Para cada uma destas combinações verificou-se o precision, recall e F1-score. O precision é indicado em casos que os falsos positivos são considerados mais prejudiciais que os falsos negativos. Em contrapartida, o recall é indicado a situações em que falsos negativos são mais prejudiciais. O F1-score considera ambas as métricas no cálculo. Quando o F1-score é baixo é um indicativo de que precision ou recall são baixos.
+
+Através de análise gráfica do F1-score buscou-se verificar quais combinações apresentavam ajustes melhores ou piores. Após esta análise gráfica foram selecionados os modelos em que, para cada dígito, o F1-score estava acima do quantil 75\%. Destes modelos foram selecionados aqueles com o menor tamanho de imagem e menor número de vizinhos para explorar a matriz de confusão e acurácia. Estas análises foram realizadas no software R.
+
