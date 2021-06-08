@@ -33,18 +33,23 @@ summary(data)
 
 # Gráfico
 
+x11()
+
+names(data)[1] <- 'Classificador'
+
 g1<-ggplot(data=data, 
            aes(x=train_size, 
-               y=X.2,
-               col = classificador)) +
-  geom_line() +
-  geom_point() +
+               y=accuracy,
+               col = Classificador)) +
+  geom_line(lwd=1.1) +
+  geom_point(size=3) +
   theme_bw()+
   geom_point(position=position_dodge(width=0.9))+
   xlab('Nº de exemplos no treino') + 
   ylab('Acurácia no teste')+
-  theme(#legend.position = 'bottom',
-    legend.title = element_text(size=12, face="bold", ),
+  theme(legend.position = 'bottom',
+    #legend.title = element_text(size=12, face="bold"),
+    legend.title = element_blank(),
     legend.text = element_text(size=12, face="bold"),
     strip.text.x = element_text(size=12, face="bold"),
     strip.text.y = element_text(size=12, face="bold"),
@@ -52,10 +57,36 @@ g1<-ggplot(data=data,
     axis.text.y=element_text(size=11)
   )
 
+g2<-ggplot(data=data, 
+           aes(x=train_size, 
+               y=accuracy,
+               col = Classificador)) +
+  geom_line(lwd=1.1) +
+  geom_point(size=3) +
+  theme_bw()+
+  geom_point(position=position_dodge(width=0.9))+
+  xlab('Nº de exemplos no treino') + 
+  ylab('Acurácia no teste')+
+  theme(legend.position = 'none',
+        #legend.title = element_text(size=12, face="bold"),
+        #legend.title = element_blank(),
+        legend.text = element_text(size=12, face="bold"),
+        strip.text.x = element_text(size=12, face="bold"),
+        strip.text.y = element_text(size=12, face="bold"),
+        axis.text.x=element_text(size=11),
+        axis.text.y=element_text(size=11)
+  ) + facet_wrap(~Classificador)
+
 ggsave(filename='fig.png', 
        plot=g1, device="png", 
        path=getwd(),
        dpi=500, 
-       height = 8, width = 16.5)
+       height = 10, width = 15)
+
+ggsave(filename='fig2.png', 
+       plot=g2, device="png", 
+       path=getwd(),
+       dpi=500, 
+       height = 10, width = 15)
 
 #---------------------------------------------------------------------

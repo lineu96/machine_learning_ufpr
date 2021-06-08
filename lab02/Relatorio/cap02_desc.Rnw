@@ -2,17 +2,15 @@
 % CAPÍTULO 2 - DESCRIÇÃO DAS ATIVIDADES
 % ----------------------------------------------------------------------
 
-A tarefa consiste em ... com o objetivo de...
 
-Para o trabalho foi disponibilizado... 
+O objetivo da tarefa é, considerando os classifcadores kNN, Naive Bayes, LDA, regressão logística e Perceptron, avaliar qual deles necessita de menos exemplos para aprender, qual tamanho de base de treinamento é suficiente para cada classificador, qual deles apresenta um melhor desempenho com poucos ou muitos dados, qual deles se mostra o mais rápido e ainda avaliar quais classificadores são complementares no problema sugerido.
 
-Foi realizado um experimento no qual...
+Para o trabalho foram disponibilizados dois conjuntos de dados: um de treino e um de teste. Ambos os conjuntos referentes a um problema de classificação com 10 classes balanceadas e 132 características. A base de treino continha 20 mil exemplos e a de teste continha 58646.
 
+Foi realizado um experimento no qual, para cada algoritmo, foram treinados 20 modelos aumentando o tamanho da base de treino de mil em mil, isto é, a primeira versão utilizava apenas 1000 exemplos para treinar, a segunda utilizava 2000 e assim por diante, até o último teste que utilizava todas as 20 mil observações no treinamento. Cada um destes modelos foi devidamente avaliado na base de teste, mantida fixa com todas as 58646 observações. Com isso, os resultados contém a análise de 20 modelos e 5 algoritmos, totalizando 100 cenários. Para cada cenário a métrica utilizada para avaliação foi a acurácia, considerando que trata-se de um problema balanceado.
 
+Através da análise gráfica do comportamento da acurácia para cada classificador associado a cada tamanho de base de treinamento, buscou-se responder as perguntas inicialmente propostas. Após esta análise gráfica, explorou-se a matriz de confusão dos modelos que fizeram uso de toda a base de treinamento. 
 
-Através de análise gráfica do ... buscou-se verificar ... 
+Os modelos foram ajustados utilizando a biblioteca \emph{scikit-learn}, disponível para linguagem Python. Para execução do trabalho utilizou-se a plataforma Google Colaboratory (ou "Colab") que permite escrever código Python diretamente no navegador. Já a análise dos resultados foram realizadas no software R.
 
-Após esta análise gráfica ... explorar a matriz de confusão e acurácia. 
-
-Estas análises foram realizadas no software R.
-
+Quanto as parametrizações utilizadas para cada classificador no \emph{scikit-learn}: para os classificadores Naive Bayes, LDA e Perceptron foram utilizados os parâmetros default das funções \emph{GaussianNB()}, \emph{LinearDiscriminantAnalysis()} e \emph{Perceptron()}, respectivamente. Para o kNN, através da função \emph{KNeighborsClassifier()} foram utilizados 5 vizinhos, função peso uniforme, algoritmo kd\_tree, leaf\_size igual a 30, e distância de Minkowski com p igual a 2 (distância Euclideana). Para regressão logística, foi utilizada a função \emph{LogisticRegression()} utilizando algoritmo sag para otimização, indicado para problemas com conjuntos de dados grandes e número de iterações máximo igual a 500.

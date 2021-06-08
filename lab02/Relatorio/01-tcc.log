@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  7 JUN 2021 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  8 JUN 2021 02:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2194,55 +2194,90 @@ l.299
 ] (./01-tcc.toc) [3] [4
 
 ]
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 411.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [5
 
-] [6
+]
+[6] [7
 
-] [7] [8
+] [8
 
-] [9]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 466.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10] [11]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 466.
+               Default added (so using `tbp') on input line 541.
 
-</home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png, id=84, 1192.455pt x 
-578.16pt>
-File: /home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png Graphic file (ty
-pe png)
-<use /home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png>
-Package pdftex.def Info: /home/lacf14/machine_learning_ufpr/lab01/Analise/fig.p
-ng  used on input line 469.
-(pdftex.def)             Requested size: 728.00278pt x 352.9682pt.
+</home/lacf14/machine_learning_ufpr/lab02/fig.png, id=84, 1084.05pt x 722.7pt>
+File: /home/lacf14/machine_learning_ufpr/lab02/fig.png Graphic file (type png)
+<use /home/lacf14/machine_learning_ufpr/lab02/fig.png>
+Package pdftex.def Info: /home/lacf14/machine_learning_ufpr/lab02/fig.png  used
+ on input line 544.
+(pdftex.def)             Requested size: 728.00278pt x 485.35335pt.
 
-Overfull \hbox (20.00278pt too wide) in paragraph at lines 469--470
+Overfull \hbox (20.00278pt too wide) in paragraph at lines 544--545
  [][] 
  []
 
-[10 </home/lacf14/machine_learning_ufpr/lab01/Analise/fig.png (PNG copy)>]
-No file 01-tcc.bbl.
-[11
+
+LaTeX Warning: Float too large for page by 62.73727pt on input line 546.
+
+[12 </home/lacf14/machine_learning_ufpr/lab02/fig.png (PNG copy)>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 551.
+
+</home/lacf14/machine_learning_ufpr/lab02/fig2.png, id=90, 1084.05pt x 722.7pt>
+
+File: /home/lacf14/machine_learning_ufpr/lab02/fig2.png Graphic file (type png)
+
+<use /home/lacf14/machine_learning_ufpr/lab02/fig2.png>
+Package pdftex.def Info: /home/lacf14/machine_learning_ufpr/lab02/fig2.png  use
+d on input line 554.
+(pdftex.def)             Requested size: 728.00278pt x 485.35335pt.
+
+Overfull \hbox (20.00278pt too wide) in paragraph at lines 554--555
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 62.73727pt on input line 556.
+
+[13 </home/lacf14/machine_learning_ufpr/lab02/fig2.png (PNG copy)>] [14
+
+
 
 
 
 ]
+No file 01-tcc.bbl.
+[15]
 \tf@toc=\write6
 \openout6 = `01-tcc.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 556.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 556.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 641.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 641.
  (./01-tcc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 556.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 556.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 556.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 641.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 641.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 641.
  ) 
 Here is how much of TeX's memory you used:
- 37106 strings out of 492982
- 695200 string characters out of 6134895
- 914588 words of memory out of 5000000
- 39965 multiletter control sequences out of 15000+600000
- 583919 words of font info for 118 fonts, out of 8000000 for 9000
+ 37200 strings out of 492982
+ 696201 string characters out of 6134895
+ 949375 words of memory out of 5000000
+ 39972 multiletter control sequences out of 15000+600000
+ 589821 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,12n,65p,10336b,650s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
@@ -2251,10 +2286,10 @@ fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmss12.pfb
 e1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
 no/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on 01-tcc.pdf (13 pages, 2019013 bytes).
+Output written on 01-tcc.pdf (17 pages, 1632516 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 30839 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 34892 words of extra memory for PDF output out of 35830 (max. 10000000)
 

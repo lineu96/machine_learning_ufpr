@@ -2,29 +2,17 @@
 % CAPÍTULO 1INTRODUÇÃO
 % ----------------------------------------------------------------------
 
-Aprendizado de máquina consiste em dar ao computador habilidade de aprender. Em outras palavras, o aprendizado de máquina consiste em programar computadores de forma que eles aprendam a partir de dados. Segundo T. Michell "o aprendizado de máquina trata do projeto e desenvolvimento de algoritmos que imitam o comportamento de aprendizagem humano, com um foco principal em aprender automaticamente a reconhecer padrões complexos e tomar decisões". A disseminação das técnicas de aprendizado de máquina se dão hoje pela disponibilidade de dados, poder computacional e ferramentas disponíveis.
+Aprendizado de máquina consiste em programar computadores de forma que eles aprendam a partir de dados. No cenário em que temos dados rotulados e uma variável alvo definida por categorias, recomenda-se o uso de técnicas de aprendizado supervisionado para fins de classificação. Dentre os diversos classificadores bem definidos e implementados, podemos citar o kNN, o Naive Bayes, a LDA, a regressão logística e o Perceptron.
 
-No cenário em que temos dados rotulados e uma variável alvo definida por categorias, recomenda-se o uso de técnicas de aprendizado supervisionado para fins de classificação, os chamados classificadores. 
+A ideia geral do kNN consiste em, para uma unidade, encontrar os k mais próximos (similares) a ele e atribuir a classe mais frequente. Como existe a necessidade de obter a distância de um ponto para os outros, há um alto custo computacional. Outra característica deste classificador é que não requer treinamento, apenas teste, pois necessita apenas de distâncias. Contudo, a fase de teste demanda tempo considerável.
 
+O Naive Bayes é um classificador baseado em probabilidade, mais especificamente, no pensamento bayesiano. Tem como base o teorema de Bayes, que consiste em alterar as probabilidades a priori (vindas dos vetores de característica) em estimativas de probabilidade a posteriori. A ideia do teorema é a revisão de crenças conforme surgem novas evidências e, na prática, atualiza-se a probabilidade a posteriori através da priori e da verossimilhança. O algoritmo, por sua vez, é chamado de ingênuo pois faz uma forte suposição: de que os atributos são independentes, contudo costuma apresentar bons resultados. O treinamento do Naive Bayes consiste na obtenção das probabilidades condicionais. Isto é, probabilidade da característica dado o desfecho. No caso de variáveis discretas, as probabilidades são beaseadas em frequências. Para contínuas as probabilidades comumente utilizadas são discretizar a variável em categorias ou usar uma função densidade de probabilidade (em geral, usa-se distribuição normal).
 
-\textbf{Falar minimamente sobre knn, naive bayes, lda, logistic, perceptron}
+A LDA é um classificador baseado em transformações que tentam maximizar a distância entre classes e minimizar a distância intra classe. Na prática, o algoritmo busca encontrar a melhor projeção no espaço que discrimine as categorias. Trata-se de um classificador bastante simples e rápido, muito conhecido em contextos de redução de dimensionalidade. Além disso, é um modelo que apresenta certos pressupostos que, quando atendidos, geram resultados similares ao Naive Bayes, contudo, sem os pressupostos, ainda assim os resultados costumam ser satisfatórios.
 
-\section{knn}
+A regressão logística é um classificador originalmente binário que apresenta uma característica bastante interessante: para fins de predição, fornece, além da classe, a probabilidade associada. Ou seja, a fronteira de decisão é baseada em um limiar de probabilidade. Além disso, apesar de se tratar de um classificador binário, diversas implementações adaptam este algoritmo para lidar com múltiplas classes. Trata-se de um método bastante atrativo principalmente porque costuma apresentar bons resultados em problemas desbalanceados.
 
-A ideia geral o kNN consiste em, para uma unidade, encontrar os k mais próximos (similares) a ele na base rotulada de treinamento e atribuir a classe mais frequente.
+O Perceptron é um classificador linear baseado numa rede neural de um único neurônio que funciona bem para problemas linearmente separáveis. Seu funcionamento se dá a partir de um vetor de entrada, que é associado a pesos. Esta informação é sumarizada, passada por uma função de ativação e o resultado final é a resposta. Os pesos são obtidos na fase de aprendizagem e trata-se de um algoritmo "online", isto é, a cada exemplo visto, os pesos são atualizados, o que gera um ajuste mais fino. Contudo, como a cada exemplo o modelo é revisto, os dados devem estar bem embaralhados para evitar o chamado \emph{Cathastrophic Forgetting} (convergir para uma única classe). Outra característica interessante do Perceptron é que, se o problema for linearmente separável, o algoritmo vai convergir e encontrar uma fronteira.
 
-é necessário obter a distância de um ponto para os outros, logo, existe um alto custo computacional. 
+O objetivo deste relatório é apresentar os resultados da comparação de desempenho dos classificadores mencionados em função da disponibilidade da base de treinamento.
 
-não requer treinamento, apenas teste, pois necessita apenas de distâncias. 
-
-Por outro lado, a fase de teste demanda tempo considerável.
-
-\section{knn}
-
-\section{nb}
-
-\section{lda}
-
-\section{logistic}
-
-\section{perceptron}
