@@ -1,0 +1,64 @@
+Base de dados de meses do ano (12 classes).
+
+Gerar 2 bases de treinamento: uma original e uma aumentada através de Data Augmentation.
+
+Implementar duas redes neurais convolucionais: LeNet5 e uma CNN qualquer.
+
+Realizar um experimento para verificar acurácia (base balanceada) variando
+ - Bases de treinamento: com Data Augmentation x sem Data Augmentation
+ - Rede: LeNet5 e CNN qualquer
+ - Parâmetros das redes (vistos em aula. Verificar quais parâmetros são e definir valores para o experimento)
+ - Repita os experimentos utilizando 2 redes pré-treinadas na ImageNet (Transfer Learning/Fine-Tuning)
+ - Utilize essas redes para gerar vetores de características para fazer classificação em outro classificador
+
+Relatório
+ - Função utilizada para Data Augmentation
+ - Descrição das CNNs utilizadas
+ - Comparação do desempenho com base no experimento
+
+
+Apresentar matriz de confusao do melhor modelo e graficos
+Usar o melhor modelo para extração de características e aplicar em outro classificador
+
+batch size
+epocas
+
+Lenet5
+https://www.kaggle.com/curiousprogrammer/lenet-5-cnn-with-keras-99-48
+
+AlexNet
+https://towardsdatascience.com/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98
+
+DEFINIR PARAMETROS DO EXPERIMENTO
+
+ [16  6  1  0  0  0  1  7  0  0  1  7]
+ [ 2 14  1  0  0  0  0  1  1  0  0 13]
+ [ 0  0 35  0  1  0  0  0  0  0  0  0]
+ [ 0  3  0 14  2  0  0 14  1  2  0  3]
+ [ 0 14  8  1  2  0  0 13  0  0  0  0]
+ [ 0  0  0  0  0  0  3 23  1  0  1  1]
+ [ 0  0  0  0  0  2 23  5  0  1  0  1]
+ [ 0  0  1  0  0  0  0 27  0  0  0  0]
+ [ 0  0  0  0  0  0  0  1 14  2  0 14]
+ [ 0  1  4  0  0  0  0  0  0 22  0  3]
+ [ 0  5  0  0  1  0  0 14  0  1  3 10]
+ [ 0  1  0  0  0  0  0  6  0  0  1 25]
+
+
+
+
+
+
+
+ [34  4  0  0  0  1  0  0  0  0  0  0]
+ [ 1 29  0  0  0  0  0  0  1  1  0  0]
+ [ 0  0 35  0  1  0  0  0  0  0  0  0]
+ [ 0  0  0 36  1  1  0  1  0  0  0  0]
+ [ 0  1  2  2 33  0  0  0  0  0  0  0]
+ [ 0  1  0  0  0 28  0  0  0  0  0  0]
+ [ 0  0  0  0  1  2 29  0  0  0  0  0]
+ [ 0  1  1  0  0  0  0 25  0  0  1  0]
+ [ 0  0  0  1  0  0  0  0 27  1  0  2]
+ [ 0  0  0  0  0  0  0  0  0 30  0  0]
+ [ 0  0  0  0  0  0  0  0  0  0 34  0]
+ [ 0  1  0  0  0  0  0  0  0  0  6 26]

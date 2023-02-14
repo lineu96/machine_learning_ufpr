@@ -1,0 +1,15 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 1INTRODUÇÃO
+% ----------------------------------------------------------------------
+
+Aprendizado de máquina consiste em dar ao computador habilidade de aprender. Em outras palavras, o aprendizado de máquina consiste em programar computadores de forma que eles aprendam a partir de dados. Segundo T. Michell "o aprendizado de máquina trata do projeto e desenvolvimento de algoritmos que imitam o comportamento de aprendizagem humano, com um foco principal em aprender automaticamente a reconhecer padrões complexos e tomar decisões". A disseminação das técnicas de aprendizado de máquina se dão hoje pela disponibilidade de dados, poder computacional e ferramentas disponíveis.
+
+No cenário em que temos dados rotulados e uma variável alvo definida por categorias, recomenda-se o uso de técnicas de aprendizado supervisionado para fins de classificação, os chamados classificadores. Dentre os possíveis existem aqueles baseados em distâncias tal como o \emph{k Nearest Neighbors} (kNN). A ideia geral o kNN consiste em, para uma unidade, encontrar os k mais próximos (similares) a ele na base rotulada de treinamento e atribuir a classe mais frequente.
+
+Uma desvantagem deste classificador é que para identificar os mais próximos é necessário obter a distância de um ponto para todos os outros, logo, existe um alto custo computacional. Contudo, em alguns casos o kNN funciona melhor que os concorrentes mais complexos, como por exemplo quando existem múltiplas fronteiras de decisão, o que se torna difícil de detectar por algoritmos de fronteira. Além disso, o kNN não requer treinamento, apenas teste, pois necessita apenas de distâncias. Por outro lado, a fase de teste demanda tempo considerável.
+
+Um conhecido problema de classificação é o reconhecimento de dígitos manuscritos. Trata-se de um problema de classificação em que a entrada é uma imagem. Nestes casos há a necessidade de converter a imagem em um vetor de atributos. Tal conversão é chamada de representação. A representação consiste em converter determinado objeto num vetor de características, isto é, numa forma possível de se trabalhar; uma forma que a máquina entenda.
+
+Deste modo, o objetivo da representação consiste em caracterizar um objeto através de medidas que sejam similares entre indivíduos de mesma classe e diferente para indivíduos de outras classes. Em problemas em que a entrada é uma imagem existem diversas técnicas para se extrair características. A mais simples consiste em, para cada posição da imagem, verificar o valor de intensidade do pixel e classificar esta intensidade como 0 ou 1, gerando desta forma, para cada imagem, um vetor de características em que cada elemento do vetor representa a intensidade naquela partição da imagem.
+
+O objetivo deste relatório é apresentar os resultados de um problema de classificação de dígitos manuscritos utilizando kNN. No trabalho testou-se variações de algoritmos kNN e a representação das imagens foi feita verificando a intensidade dos pixels em cada partição da imagem.

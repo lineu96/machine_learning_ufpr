@@ -1,0 +1,15 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 1INTRODUÇÃO
+% ----------------------------------------------------------------------
+
+Redes Neurais Artificiais são técnicas de aprendizado de máquina formadas por modelos matemáticos que se inspiram na estrutura de um neurônio. Basicamente uma Rede Neural recebe uma entrada na primeira camada, esta entrada é associada a pesos, o resultado é passado para camadas subsequentes e por funções de ativação até que no final o modelo estime um valor predito do target para uma unidade com aquelas características.
+
+Dentre as propostas de redes neurais, o Perceptron foi a primeira e mais primitiva estrutura. Trata-se de uma rede neural de um único neurônio capaz de lidar com problemas linearmente separáveis. Para problemas que não são linearmente separáveis, é possível aumentar a complexidade da rede através de camadas ocultas tal como ocorre no Multilayer Perceptron (MLP). Estas camadas extras podem ser vistas como extratores de características e, em geral, uma única camada escondida resolve a maior parte dos problemas. Um resultado interessante neste paradigma é que, dado uma quantidade suficiente de neurônios na camada escondida é possível resolver qualquer tipo de problema, desde que haja um bom vetor de características. 
+
+Uma desvantagem das Redes Neurais é que tratam-se de modelos superparametrizados, o que exige uma grande quantidade de exemplos de treino para resultados satisfatórios. Além disso, há a necessidade de definir o tamanho da rede, camadas, neurônios, taxa de aprendizagem, momentum, etc.
+
+Uma outra utilidade de Redes neurais diz respeito à extração de características. A representação é, sem dúvidas, um grande dos gargalos em sistemas de aprendizado de máquina. Em geral, as características são definidas por um ser humano. Contudo, técnicas como representation learning ou feature learning vão no sentido de deixar a máquina definir a representação do objeto. Neste contexto, surgem as Redes Neurais Convolucionais (CNN), que servem tanto para predição como representação.
+
+Para uma CNN usada para classificação de imagens, a imagem é a entrada da rede. A partir desta entrada extraem-se as características através de camadas de convolução. Nestas redes existem quatro tipos básicos de camadas: convolução, não linearidade (relu, função de ativação), pooling (agregação, redução do número de features) e classificação (fully connected layer).
+
+O objetivo deste relatório é apresentar os resultados de um experimento que compara o desempenho de diferentes Redes Neurais Convolucionais a um problema de classificação de uma base de imagens de meses do ano manuscritos.

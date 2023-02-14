@@ -1,0 +1,17 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 5 - CONCLUSÃO
+% ----------------------------------------------------------------------
+
+Os resultados mostraram que a rede com melhor desempenho considerando acurácia como métrica de qualidade foi a AlexNet, com acurácias acima de 0.9. A segunda melhor rede foi a clássica Lenet5, com acurácias acima de 0.8. 
+
+As redes pré treinadas Xception e MobileNetV2 foram problemáticas. A rede Xception mostrou-se a mais demorada para ajuste e não apresentou desempenho superior às redes Lenet5 e AlexNet; também devido ao tempo não foi possível obter as acurácias para os cenários com mais de 100 épocas de treinamento. A rede MobileNetV2 apresentou ajuste rápido para todas as épocas, contudo os resultados para esta rede em termos de predição se mostraram extremamente pobres.
+
+A dificuldade em utilizar o modelo Xception se dá pelo tamanho e complexidade da rede. Além disso, trata-se de uma rede pré-treinada para classificar imagens em 1000 categorias de objetos, o que pode justificar um resultado não muito satisfatório para classificação de dígitos manuscritos.
+
+Já a MobileNetV2 é um modelo de classificação desenvolvido pelo Google que fornece recursos para classificação em tempo real em smartphones, o que pode justificar a velocidade do ajuste mas pobreza dos resultados neste contexto específico.
+
+Quanto à utilização da melhor rede AlexNet para geração de um vetor de características para regressão logística, notou-se que o resultado da regressão logística foi consideravelmente pior do que aquele observado na classificação com a própria rede neural convolucional. Enquanto a AlexNet atingiu acurácia acima de 0.9, o modelo de regressão logística com entrada cedida pela rede apresentou acurácia de aproximadamente 0.5.
+
+A principal restrição deste estudo é o tamanho da base de treinamento. Como estamos utilizando redes neurais convolucionais, sabe-se que existe a necessidade de uma grande quantidade de dados para trabalhar. A alternativa sugerida para este cenário é utilizar técnicas de Data Augmentation. Contudo, devido ao tempo demandado pelo experimento e ao tempo de disponibilidade das GPUs na plataforma utilizada, não foi possível explorar esta alternativa. Mesmo assim, ressalta-se um resultado satisfatório da rede AlexNet, com acurácia acima de 0.9 e da Lenet5, capaz de atingir acurácias máximas de 0.8 em modelos que demandam pouco tempo, devido à simplicidade da rede.
+
+

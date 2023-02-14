@@ -1,0 +1,97 @@
+% ----------------------------------------------------------------------
+% CAPÍTULO 2 - DESCRIÇÃO DAS ATIVIDADES
+% ----------------------------------------------------------------------
+
+A tarefa consiste em comparar o desempenho de diferentes redes neurais convolucionais conhecidas na literatura e também redes neurais pré treinadas para o problema de classificação de meses do ano manuscritos. Para o trabalho foi disponibilizado um conjunto já separado em treino e teste: a base de treino possuia 1578 imagens e a de teste 401.
+
+Foram avaliadas duas redes neurais convolucionais clássicas: Lenet5 e AlexNet. Além destas duas redes foram testadas duas redes pré treinadas com pesos da Imagenet: Xception e MobileNetV2. Para comparação destas redes foi realizado um experimento no qual variou-se o batch size, número de épocas e learning rate das redes. As possibilidades testadas para cada uma destas variáveis foram:
+
+\begin{itemize}
+  \itemsep 0.5ex
+  \item Batch size: 64, 128, 256.
+  \item Épocas: 100, 300 e 500.
+  \item Learning rate: 0.01, 0.1, 0.5.
+\end{itemize}
+
+O número de combinações únicas possíveis combinando cada nível é igual a 108. Cada combinação diz respeito a um modelo ajustado. Por se tratar de um problema balanceado a qualidade dos modelos foi aferida por meio da acurácia. Por meio de uma análise gráfica buscou-se verificar quais combinações apresentavam ajustes melhores ou piores. Após esta análise foram selecionados os modelos que apresentavam acurácia mais alta a fim de selecionar o modelo mais enxuto com bom desempenho. Para o modelo selecionado explorou-se a matriz de confusão e ainda utilizou-se este modelo para extração de características e aplicação desta representação a outro classificador, neste trabalho optou-se por uma regressão logística.
+
+Os modelos foram ajustados utilizando a biblioteca scikit-learn, disponível para linguagem Python. Para execução do trabalho utilizou-se a plataforma Google Colaboratory (ou "Colab") que permite escrever código Python diretamente no navegador. Já a análise dos resultados foi feita com o software R. As parametrizações das redes foram feitas utilizando Keras e são descritas nas seções que seguem.
+
+\pagebreak
+
+\section{Lenet5}
+
+\begin{lstlisting}
+model = Sequential()
+model.add(Conv2D(filters=32, kernel_size=(5,5), activation='relu', input_shape=input_shape))
+model.add(MaxPooling2D(strides=2))
+model.add(Conv2D(filters=48, kernel_size=(5,5), activation='relu'))
+model.add(MaxPooling2D(strides=2))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(84, activation='relu'))
+model.add(Dense(num_classes, activation='softmax'))
+
+\end{lstlisting}
+
+\section{AlexNet}
+
+\begin{lstlisting}
+model = Sequential()
+model.add(Conv2D(filters=96, kernel_size=(11,11), strides=(4,4), activation='relu', input_shape=(227,227,3)))
+model.add(BatchNormalization())
+model.add(MaxPool2D(pool_size=(3,3), strides=(2,2)))
+model.add(Conv2D(filters=256, kernel_size=(5,5), strides=(1,1), activation='relu', padding="same"))
+model.add(BatchNormalization())
+model.add(MaxPool2D(pool_size=(3,3), strides=(2,2)))
+model.add(Conv2D(filters=384, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"))
+model.add(BatchNormalization())
+model.add(Conv2D(filters=384, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"))
+model.add(BatchNormalization())
+model.add(Conv2D(filters=256, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"))
+model.add(BatchNormalization())
+model.add(MaxPool2D(pool_size=(3,3), strides=(2,2)))
+model.add(Flatten())
+model.add(Dense(4096, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(4096, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(num_classes, activation='softmax'))
+
+\end{lstlisting}
+ 
+ \section{Xception}
+
+\begin{lstlisting}
+xception_model = Xception(weights='imagenet', include_top=False)
+
+## "Freeze" layers/weights
+for layer in xception_model.layers[:]:
+   layer.trainable = False
+
+model = Sequential()
+model.add(xception_model)
+model.add(GlobalAveragePooling2D())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(num_classes, activation='softmax'))
+
+\end{lstlisting}
+
+\section{MobileNetV2}
+
+\begin{lstlisting}
+mobile_model = MobileNetV2(weights='imagenet', include_top=False)
+
+## "Freeze" layers/weights
+for layer in mobile_model.layers[:]:
+   layer.trainable = False
+
+model = Sequential()
+model.add(mobile_model)
+model.add(GlobalAveragePooling2D())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(num_classes, activation='softmax'))
+
+\end{lstlisting}
